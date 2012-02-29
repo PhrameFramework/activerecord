@@ -27,7 +27,7 @@ class Bootstrap
 
         include_once 'vendor/ActiveRecord.php';
 
-        $config = new Core\Config('activerecord', $application, 'activerecord');
+        $config = new Core\Config('activerecord', $application, 'phrame/activerecord');
         $connection_string = $config->connection;
 
         if ( ! empty($connection_string))
