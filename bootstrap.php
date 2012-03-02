@@ -19,7 +19,8 @@ class Bootstrap
     /**
      * Loads and initializes package
      * 
-     * @param  Core\Application  $application  Application object
+     * @param   Core\Application  $application  Application object
+     * @return  void
      */
     public static function init($application = null)
     {
