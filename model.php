@@ -14,5 +14,17 @@ namespace Phrame\Activerecord;
 
 class Model extends \ActiveRecord\Model
 {
-    
+    /**
+     * Escapes and sets data
+     * 
+     * @param   $name   string  Field name
+     * @param   $value  string  Field value
+     * @return  void
+     */
+    public function __set($name, $value)
+    {
+        $value = htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+        parent::__set($name, $value);
+    }
+
 }
