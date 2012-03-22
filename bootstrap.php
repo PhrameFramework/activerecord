@@ -19,22 +19,22 @@ class Bootstrap
     /**
      * Loads and initializes package
      * 
-     * @param   Core\Application  $application  Application object
+     * @param   Core\Application  $app  Application object
      * @return  void
      */
-    public static function init($application = null)
+    public static function init($app = null)
     {
-        $application = $application ?: Core\Application::instance();
+        $app = $app ?: Core\Application::instance();
 
         include_once 'vendor/ActiveRecord.php';
 
-        $config = new Core\Config('activerecord', $application, 'phrame/activerecord');
+        $config = new Core\Config('activerecord', $app, 'phrame/activerecord');
         $connection_string = $config->connection;
 
         if ( ! empty($connection_string))
         {
             $cfg = \ActiveRecord\Config::instance();
-            $cfg->set_model_directory(APPLICATIONS_PATH.'/'.$application->name.'/models');
+            $cfg->set_model_directory(APPLICATIONS_PATH.'/'.$app->name.'/models');
             $cfg->set_connections(
                 array(
                     'development' => $connection_string
