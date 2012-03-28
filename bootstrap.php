@@ -24,7 +24,7 @@ class Bootstrap
      */
     public static function init($app = null)
     {
-        $app = $app ?: Core\Application::instance();
+        $app = $app ?: Core\Applications::instance();
 
         include_once 'vendor/ActiveRecord.php';
 
