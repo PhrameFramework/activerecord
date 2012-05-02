@@ -35,8 +35,9 @@ class Bootstrap
             $cfg->set_model_directory(APPLICATIONS_PATH.'/'.$app_name.'/models');
             $cfg->set_connections(
                 array(
-                    'development' => $connection_string
-                )
+                    $app_name => $connection_string
+                ),
+                $app_name
             );
         }        
     }
