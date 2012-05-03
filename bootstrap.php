@@ -14,6 +14,9 @@ namespace Phrame\Activerecord;
 
 use Phrame\Core;
 
+/**
+ * Bootstrap class
+ */
 class Bootstrap
 {
     /**
@@ -27,7 +30,7 @@ class Bootstrap
         include_once 'vendor/ActiveRecord.php';
 
         $config = new Core\Config('activerecord', $app_name, 'phrame/activerecord');
-        $connection_string = $config->connection;
+        $connection_string = $config['connection'];
 
         if ( ! empty($connection_string))
         {

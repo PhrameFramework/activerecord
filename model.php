@@ -12,6 +12,9 @@
 
 namespace Phrame\Activerecord;
 
+/**
+ * Model class
+ */
 class Model extends \ActiveRecord\Model
 {
     /**
