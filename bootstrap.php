@@ -35,7 +35,6 @@ class Bootstrap
         if ( ! empty($connection_string))
         {
             $cfg = \ActiveRecord\Config::instance();
-            $cfg->set_model_directory(APPLICATIONS_PATH.'/'.$app_name.'/models');
             $cfg->set_connections(
                 array(
                     $app_name => $connection_string
